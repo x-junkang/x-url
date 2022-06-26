@@ -6,11 +6,12 @@ import (
 )
 
 type Config struct {
-	Name     string
-	Port     string
+	Name     string `json:"name"`
+	Port     string `json:"port"`
 	LogDir   string `json:"log_dir"`
 	LogFile  string `json:"log_file_name"`
 	LogLevel string `json:"log_level"`
+	MySqlDSN string `json:"mysql_dsn"`
 }
 
 var dConfig = &Config{
@@ -18,7 +19,9 @@ var dConfig = &Config{
 	Port:     ":8080",
 	LogDir:   "log",
 	LogFile:  "xurl.log",
-	LogLevel: "info",
+	LogLevel: "debug",
+	MySqlDSN: "root:password@(localhost:3306)/service",
+	// MySqlDSN: "xjk:An0thrS3crt@(localhost:3307)/service",
 }
 
 func DefaultConfig() *Config {

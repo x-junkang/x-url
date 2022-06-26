@@ -1,5 +1,8 @@
 {
-    "name": "hello",
-    "port": ":7090",
-    "log_dir": "./log"
+    "name": "X-URL",
+    "port": ":8080",
+    "log_dir": "./log",
+    "log_file":"x-url.log",
+    "log_level":"info",
+    "mysql_dsn":"xjk:An0thrS3crt@(localhost:3307)/service"
 }

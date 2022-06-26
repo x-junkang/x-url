@@ -24,7 +24,7 @@ func (s *Service) Run() {
 	})
 	router.POST("/tiny_url", handler.NewTinyURL)
 
-	router.GET("/:tiny_url", handler.Redirect)
+	router.GET("/:shot_code", handler.Redirect)
 
 	log.Info().Msg("server started!")
 	router.Run(s.listenPort)
