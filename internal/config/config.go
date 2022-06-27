@@ -6,22 +6,27 @@ import (
 )
 
 type Config struct {
-	Name     string `json:"name"`
-	Port     string `json:"port"`
-	LogDir   string `json:"log_dir"`
-	LogFile  string `json:"log_file_name"`
-	LogLevel string `json:"log_level"`
-	MySqlDSN string `json:"mysql_dsn"`
+	Name          string `json:"name"`
+	Port          string `json:"port"`
+	LogDir        string `json:"log_dir"`
+	LogFile       string `json:"log_file_name"`
+	LogLevel      string `json:"log_level"`
+	MySqlDSN      string `json:"mysql_dsn"`
+	RedisAddr     string `json:"redis_addr"`
+	RedisPassword string `json:"redis_password"`
+	RedisDB       int    `json:"redis_db"`
 }
 
 var dConfig = &Config{
-	Name:     "x-url service",
-	Port:     ":8080",
-	LogDir:   "log",
-	LogFile:  "xurl.log",
-	LogLevel: "debug",
-	MySqlDSN: "root:password@(localhost:3306)/service",
-	// MySqlDSN: "xjk:An0thrS3crt@(localhost:3307)/service",
+	Name:          "x-url service",
+	Port:          ":8080",
+	LogDir:        "log",
+	LogFile:       "xurl.log",
+	LogLevel:      "debug",
+	MySqlDSN:      "root:password@(localhost:3306)/service",
+	RedisAddr:     "localhost:6379",
+	RedisPassword: "",
+	RedisDB:       0,
 }
 
 func DefaultConfig() *Config {

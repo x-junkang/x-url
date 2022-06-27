@@ -3,6 +3,9 @@
     "port": ":8080",
     "log_dir": "./log",
     "log_file":"x-url.log",
-    "log_level":"info",
-    "mysql_dsn":"xjk:An0thrS3crt@(localhost:3307)/service"
+    "log_level":"debug",
+    "mysql_dsn":"xjk:An0thrS3crt@(localhost:3307)/service",
+    "redis_addr":"localhost:6379",
+    "redis_password":"",
+    "redis_db":0
 }

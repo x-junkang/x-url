@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 
+	"github.com/x-junkang/x-url/internal/cache"
 	"github.com/x-junkang/x-url/internal/config"
 	"github.com/x-junkang/x-url/internal/model"
 	"github.com/x-junkang/x-url/internal/service"
@@ -35,6 +36,14 @@ func main() {
 	}
 	xlog.Configure(logConf)
 	err = model.InitDB(cfg.MySqlDSN)
+	if err != nil {
+		panic(err)
+	}
+	err = cache.InitRedis(cache.Config{
+		Addr:     cfg.RedisAddr,
+		Password: cfg.RedisPassword,
+		DB:       cfg.RedisDB,
+	})
 	if err != nil {
 		panic(err)
 	}
